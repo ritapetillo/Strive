@@ -161,7 +161,6 @@ Check if the email is valid using string methods. The email (in this example) is
 /* WRITE YOUR CODE HERE */
 const email = "asdasasa";
 
-
 const antiSpam = (emailContent) => {
   if (
     typeof emailContent === "string" &&
@@ -177,6 +176,14 @@ antiSpam(email);
 /* EXERCISE 20
 Write a function that receives a date D as parameter and calculates the number of days passes since the D.
 */
+const diffDates = (d1) => {
+  const today = new Date().getTime();
+  var date2 = new Date(d1).getTime();
+
+  return parseInt((today - date2) / (24 * 3600 * 1000));
+};
+
+console.log(diffDates("10/10/2019"));
 
 /* WRITE YOUR CODE HERE */
 
@@ -187,4 +194,24 @@ Ex.: X = 3, Y = 2
 "10","11","12"]
 */
 
+//create array where every x numbers I add +10
+
+const createArrayX = (x) => {
+  const arrayx = [];
+  for (i = 0; i <= x; i++) {
+    arrayx.push(i);
+  }
+  return arrayx;
+};
+const createArrayY = (x, y) => {
+  let arrayY = [];
+  const arrayX = createArrayX(x);
+  for (i = 0; i <= y; i++) {
+    arrayX.forEach((item) => {
+      arrayY.push(item + i*10);
+    });
+  }
+  return arrayY;
+};
+console.log(createArrayY(5, 8));
 /* WRITE YOUR CODE HERE */
