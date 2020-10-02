@@ -63,6 +63,8 @@ const dice = () => {
   return Math.floor(Math.random() * 6 + 1);
 };
 
+
+
 /* Ex.2 
     Write the function WhoIsBigger that receives 2 numbers and returns the bigger of the 2
 */
@@ -76,8 +78,13 @@ const WhoIsBigger = (x, y) => {
 */
 
 const SplitMe = (s) => {
-  return s.split(" ");
+  let newArray = []
+  newArray = s.split(" ");
+  return newArray
 };
+
+
+
 /* Ex.4
     Write the function DeleteOne that receives a string and a boolean. If the boolean is true, should return the string without the first letter, otherwise should remove the last one
 */
@@ -88,12 +95,43 @@ const DeleteOne = (s, b) => {
 /* Ex.5
    Write the function OnlyLetters that receives a string, removes all the numbers and returns it.
    Ex.: OnlyLetters("I love 123 whatever")  => returns "I love whatever"
+
 */
+
+//3 ways of doing it
 
 const OnlyLetters = (s) => {
   //method to delete numbers in string. Replace the number with an empty space''
   return s.replace(/[0-9]/g, "");
 };
+
+const OnlyLetters2 = (s) =>{
+  //   1) create an empty array (which will result in the finalized string to return)
+  let arrayOnlyString = []
+ // 2) transform the string into an array of characters
+ let arrayString = s.split(" ");
+ for(let i=0;i<arrayString.length; i++){
+   //loop all the items in the array and check if they have or not have a number. IF they have a number, I exclude them from the array arrayOnlyString
+   if(!/\d/.test(arrayString[i])){
+     arrayOnlyString.push(arrayString[i]) }
+ }
+ return arrayOnlyString
+}
+
+const OnlyLetters3 = (s) =>{
+  //   1) create an empty array (which will result in the finalized string to return)
+  let arrayOnlyString = []
+ // 2) transform the string into an array of characters
+ let arrayString = s.split(" ");
+ for(let i=0;i<arrayString.length; i++){
+   //loop all the items in the array and check if they have or not have a number. IF they have a number, I exclude them from the array arrayOnlyString
+   if(!arrayString[i].match(/^[0-9]+$/)){
+     arrayOnlyString.push(arrayString[i]) }
+ }
+ return arrayOnlyString
+}
+
+
 
 /* Ex.6 
    Write the function IsThisAnEmail that receives a string and returns true if the string is a valid email.
@@ -120,7 +158,8 @@ const daysOfWeek = [
 
 const WhatDayIsIt = () => {
   const now = new Date();
-  return daysOfWeek[now.getDay() - 1];
+  const dayOfWeekInNumber = now.getDay()
+  return daysOfWeek[dayOfWeekInNumber- 1];
 };
 
 /* Ex.8
