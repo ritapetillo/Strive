@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+body {
+  width: 100vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*--------------GENERAL------------------*/
+
+a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.822);
+}
+
+li{
+    text-decoration:none;
+    list-style: none;
+    padding:5px;
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+}
+
+
+/*--------------HEADER------------------*/
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 1440px;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background-color: rgba(252, 252, 252, 0.904);
+}
+.nav__links a {
+  padding: 0 20px;
+}
+
+/*--------------HERO------------------*/
+.hero {
+  background-image: url("https://cdn.pixabay.com/photo/2016/11/30/12/29/bicycle-1872682_1280.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 60vh;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero button{
+    margin-top: -70%;
+    width:40%;
+    margin-left:auto;
+    margin-right: auto;
+    border: none;
+    outline: none;
+    font-family:"Lato", sans-serif;
+    background-color: transparent;
+    color:gold
+
+}
+
+.hero h1 {
+  color: white;
+  font-size: 50px;
+  text-shadow: 5px 5px 5px black;
+  z-index: 4444;
+}
+#overlay{
+    width:100%;
+    height: 100%;
+    background-color:rgba(0,0,0,0.4);
+    position: absolute;
+
+    
+}
+
+/*--------------PRODUCTS------------------*/
+.products {
+  width: 90vw;
+  margin: 80px auto;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  
+}
+
+.products table {
+  width: 100%;
+}
+
+td {
+  padding: 40px 10px;
+  text-align: center;
+  width: calc(100% / 3);
+  text-align: center;
+}
+td h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.products__image img {
+  width: 100%;
+}
+.products__image {
+  width: 80%;
+  object-fit: contain;
+}
+.products span {
+  display: block;
+  font-weight: 600;
+  margin-top: 5px;
+  padding: 10px;
+}
+.cta-buy {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 5px;
+  background-color: gold;
+  width: 50%;
+  border-radius: 10px;
+  color: black;
+}
+
+/*--------------PRODUCTS------------------*/
+
+.contact-us {
+  background-color: lightgrey;
+  display: flex;
+  padding: 30px 40px;
+  width:90vw;
+  margin:40px auto;
+  flex-direction: row;
+  justify-items: space-between;
+  align-items: center;
+
+}
+.contact-us__form{
+    flex:1;
+    align-items: center;
+    justify-items: flex-start;
+
+}
+
+.contact-us__form form {
+  display: flex;
+  flex-direction: column;
+  width:100%;
+}
+.contact-us__form input {
+  margin: 10px 0;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  padding: 5px;
+}
+.contact-us__form textarea {
+  margin: 10px 0;
+  border: none;;
+  outline: none;
+  border-radius: 2px;
+  padding: 5px;
+}
+.contact-us button{
+    border: none;
+    width:60%;
+    padding:5px;
+    background-color: orange;
+    border-radius: 5px;
+    outline: none;
+
+}
+.contact-us__addr{
+    padding:40px;
+    align-self: flex-start;
+}
+.contact__map{
+    text-align: right;
+    padding-left: 20% !important;
+}
+
+/*--------------FOOTER------------------*/
+.footer{
+    background-color:black;
+    color:lightgrey;
+    display: flex;
+    padding:30px 5%;
+    font-size: 12px;
+    font-weight:300;
+}
+.footer a{
+    color: white
+}
+
+.footer div:nth-child(2){
+    margin: 10px 50px;
+}
+
