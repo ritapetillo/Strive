@@ -1,0 +1,226 @@
+<html>
+ 
+
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+      <header>
+        <nav>
+          <a href="#" class="nav__logo">THE GREAT STORE</a>
+          <div class="nav__links">
+            <a href="#" class="nav__links">Switch Title and Address</a>
+          <a href="#" id="switch" class="nav__links" onclick="changeTitleAddress()"><i class="fas fa-exchange-alt"></i></i></a>
+            <a href="#" class="nav__links">Switch Theme</a>
+            <a href="#" id="toggle" class="nav__links" onclick="changeBgc()"><i class="fas fa-toggle-off"></i></a>
+            <a href="#" class="nav__links">Home</a>
+            <a href="#" class="nav__links">Products</a>
+            <a href="#" class="nav__links">About us</a>
+          </div>
+        </nav>
+      </header>
+      <div class="container">
+        <section class="hero">
+          <h1>THE GREAT STORE</h1>
+
+          <div id="overlay"></div>
+        </section>
+        <section class="products">
+          <h2>OCTOBER TOP SELLERS</h2><div id="hideImgs">Show Images <i class="fas fa-toggle-on" ></div></i></a>
+          <table>
+            <tr>
+              <td>
+                <div class="products__image">
+                  <img
+                    src="https://images-na.ssl-images-amazon.com/images/I/41DQoLIfsRL._AC_US320_QL65_.jpg"
+                  />
+                </div>
+                <h3>Nintendo Switch with Neon Blue and Neon Red Joy‑Con</h3>
+                <p>
+                  Get the gaming system that lets you play the games you want
+                </p>
+                <span>Price: $399.00</span>
+                <a
+                  href="https://www.amazon.com/Nintendo-Switch-Neon-Blue-Joy%E2%80%91/dp/B07VGRJDFY/ref=lp_16225009011_1_1?s=electronics&ie=UTF8&qid=1601903134&sr=1-1"
+                  class="cta-buy"
+                  >Buy it Now</a
+                >
+              </td>
+              <td>
+                <div class="products__image">
+                  <img
+                    src="https://images-na.ssl-images-amazon.com/images/I/31MPSDnQmUL._AC_US320_QL65_.jpg"
+                  />
+                </div>
+                <h3>
+                  Oculus Quest 2 — Advanced All-In-One Virtual Reality Headset —
+                  64 GB
+                </h3>
+                <p>
+                  Oculus Quest 2 is our most advanced all-in-one VR system yet.
+                </p>
+                <span>Price: $299.00</span>
+                <a
+                  href="https://www.amazon.com/Oculus-Quest-Advanced-All-One-2/dp/B08F7PTF53/ref=lp_16225009011_1_3?s=electronics&ie=UTF8&qid=1601903134&sr=1-3"
+                  class="cta-buy"
+                  >Buy it Now</a
+                >
+              </td>
+              <td>
+                <div class="products__image">
+                  <img
+                    src="https://images-na.ssl-images-amazon.com/images/I/41vMYgD92xL._AC_US320_QL65_.jpg"
+                  />
+                </div>
+                <h3>Acer Aspire 5 Slim Laptop, 15.6 inches</h3>
+                <p>
+                  Powerful and portable, the Aspire 5 laptop delivers on every
+                  aspect of everyday computing.
+                </p>
+                <span>Price: $349.00</span>
+                <a
+                  href="https://www.amazon.com/Acer-Display-Graphics-Keyboard-A515-43-R19L/dp/B07RF1XD36/ref=lp_16225009011_1_6?s=electronics&ie=UTF8&qid=1601903134&sr=1-6"
+                  class="cta-buy"
+                  >Buy it Now</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="products__image">
+                  <img
+                    src="https://images-na.ssl-images-amazon.com/images/I/41A+LoN2W3L._AC_US320_QL65_.jpg"
+                  />
+                </div>
+                <h3>Roku Express HD Streaming Media Player 2019</h3>
+                <p>
+                  Roku Express Streaming Media Player delivers a smooth HD
+                  streaming experience on your TV at our best price.
+                </p>
+                <span>Price: $29.00</span>
+                <a
+                  href="https://www.amazon.com/Roku-Express-Streaming-Media-Player/dp/B07WVFCVJN/ref=lp_16225009011_1_8?s=electronics&ie=UTF8&qid=1601903134&sr=1-8"
+                  class="cta-buy"
+                  >Buy it Now</a
+                >
+              </td>
+              <td>
+                <div class="products__image">
+                  <img
+                    src="https://images-na.ssl-images-amazon.com/images/I/31PTviHMeUL._AC_US320_QL65_.jpg"
+                  />
+                </div>
+                <h3>HP VH240a 23.8-inch Full HD 1080p IPS LED Monitor</h3>
+                <p>
+                  Get the best productivity from home or at the office with the
+                  virtually borderless HP VH240a 23.8-Inch display.
+                </p>
+                <span>Price: $104.00</span>
+                <a
+                  href="https://www.amazon.com/HP-23-8-inch-Adjustment-Speakers-VH240a/dp/B072M34RQC/ref=lp_16225009011_1_12?s=electronics&ie=UTF8&qid=1601903134&sr=1-12"
+                  class="cta-buy"
+                  >Buy it Now</a
+                >
+              </td>
+            </tr>
+          </table>
+        </section>
+        <section class="contact-us">
+          <div class="contact-us__form">
+              <h3>Send us a message</h3>
+            <form action="">
+              <input type="text" placeholder="Your Name" />
+              <input type="email" placeholder="Your Email" />
+              <textarea
+                name="message"
+                id="message"
+                cols="30"
+                rows="10"
+                placeholder="Type a message..."
+              ></textarea>
+              <button type="submit">SEND MESSAGE</button>
+            </form>
+          </div>
+          <div class="contact-us__addr">
+              <p>Our address:</br>
+                  18041 Biscayne Blvd,</br>
+                  Aventura FL 33160
+              </p>
+          </div>
+          <div class="contact-us__map">
+              
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3587.767709131318!2d-80.14796804986364!3d25.942850983474145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9ac54e1b04ba7%3A0xe20894a40546bd43!2s18041%20Biscayne%20Blvd%2C%20Aventura%2C%20FL%2033160%2C%20USA!5e0!3m2!1sen!2sit!4v1601905160881!5m2!1sen!2sit"
+              width="300"
+              height="250"
+              frameborder="0"
+              style="border: 0"
+              allowfullscreen=""
+              aria-hidden="false"
+              tabindex="0"
+            ></iframe>
+          </div>
+        </section>
+        <section class="to-do">
+          <div>
+              <input type="text" placeholder="List Title" id="listTitleInput" />
+             
+              <button type="submit" id="changeTitleBtn">Change Title</button>
+              <input type="text" placeholder="Add New Item" id="itemToAddInput" />
+             
+              <button type="submit" id="addItem2Btn">Add</button>
+
+              <button type="submit" id="removeListOne" class="remove">Remove List 1</button>
+              <button type="submit" id="allGreenBtn" class="green">All Green</button>
+
+
+
+          </div>
+          <div class="to-do-list">
+            <h2 id="listTitle">Todo List</h2>
+           <ul id="firstList">
+               <li><p>1st</p></li>
+               <li>2nd</li>
+               <li>3rd</li>
+           </ul>
+           <ul id="secondList">
+               <li>1st</li>
+               <li>2nd</li>
+               <li>3rd</li>
+           </ul>
+           <div>
+               <p>This text is just for the exercise</p>
+           </div>
+           <br>
+           <button class="cta-buy" id="changeTextBtn">Change Text</button>
+           </div>
+
+        </section>
+        <footer class="footer">
+          <div class="footer__details">
+            <a href="#" class="footer__logo">THE GREAT STORE</a>
+            <p>18041 Biscayne Blvd #1104</br> Aventura, FL</p>
+          </div>
+          <div class="footer__links">
+            <ul>
+              <li>About</li>
+              <li>Contacts</li>
+              <li>Privacy</li>
+              <li>Terms and Conditions</li>
+            </ul>
+          </div>
+          
+
+        </footer>
+    </div>
+    <script src="https://kit.fontawesome.com/84a612360c.js" crossorigin="anonymous"></script>
+
+      <script src="main.js"></script>
+
+    </body>
+  </html>
+</html>
+
