@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>My Music</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#">RIMUSIC</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="presentation container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-md-8">
+                    <img src="./img/43942.jpg" alt="" class="img-fluid">
+
+                </div>
+                <div class="col-sm-12 col-md-4 d-flex flex-column justify-content-center align-items-center">
+                    <h1>HELLO!</h1>
+                    <h4>My name is Rita. This is a brief trip into the music which signed my life!</h4>
+
+                </div>
+            </div>
+        </section>
+
+        <section class='main'>
+
+
+            <section class="favorite__albums container">
+                <h2>A little music storyline</h2>
+                <div class="row">
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="card ">
+                            <img src="https://i.scdn.co/image/d6aadd3f346ef8ceec2e0df25352498e4d53784e" alt=""
+                                class="img-fluid">
+                            <div class="card-body d-flex flex-column ">
+                                <h4>Blink 182</h4>
+                                <h6>Enema of the State <br> <span class="badge badge-secondary"> Rock</span></h6>
+                                <small>As a kid, I rememeber watching TRL on MTV and being obsessed from Blink
+                                    182</small>
+
+                                <button type="button" class="btn btn-primary tracks mt-4" data-toggle="modal"
+                                    data-target="#blinkModal">
+                                    <i class="fas fa-stream"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="card">
+                            <img src="https://i.scdn.co/image/293eb9db0f4384e43102b2653023a588588acf87" alt=""
+                                class="img-fluid">
+                            <div class="card-body">
+                                <h4>Lanny Krevitz</h4>
+
+                                <h6>5 <br><span class="badge badge-secondary"> Rock</span></h6>
+                                <small>It was my birthday and a group friends gave me this album as a gift. It was love
+                                    at first "ear"</small>
+                                <button type="button" class="btn btn-primary tracks mt-4" data-toggle="modal"
+                                    data-target="#lennyModal">
+                                    <i class="fas fa-stream"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="card">
+                            <img src="https://i.scdn.co/image/1ff3b3c63751ef3615e703c9853c433c3f45f4e7" alt=""
+                                class="img-fluid">
+                            <div class="card-body">
+                                <h4>Coldplay</h4>
+                                <h6>Memories...Do Not Open <span class="badge badge-secondary">Pop-Rock</span></h6>
+                                <small>I discovered the Coldplays a little bit late, but they made most of my university
+                                    time soundtracks</small>
+                                <button type="button" class="btn btn-primary tracks mt-4" data-toggle="modal"
+                                    data-target="#coldModal">
+                                    <i class="fas fa-stream"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="card">
+                            <img src="https://i.scdn.co/image/5cf62c6c908c0a211c0a6eb5ea1878b17df5b9bb" alt=""
+                                class="img-fluid">
+                            <div class="card-body">
+                                <h4>The Weeknd</h4>
+                                <h6>After Hours<br><span class="badge badge-secondary"> Rock</span></h6>
+                                <small>I'm currently obsaessed with In Your Eyes and Blind Lights. I couuld listen to
+                                    them over and over agian.</small>
+                                <button type="button" class="btn btn-primary tracks mt-4" data-toggle="modal"
+                                    data-target="#wkdModal">
+                                    <i class="fas fa-stream"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </section>
+            <section class="best__album container mt-5">
+                <div class="row">
+                    <div class="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center mb-2">
+                        <h3>The Weeknd</h3>
+                        <h2>After Hours</h2>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="row">
+                            <div class="col-12 col-md-6  d-flex flex-column align-items-center justify-content-center">
+                                <img src="https://media.pitchfork.com/photos/5e6fcda64b101700083a93ce/1:1/w_320/After%20Hours_The%20Weeknd.jpg"
+                                    alt="" class="img-fluid">
+                            </div>
+                            <div class="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center">
+                                <span class='mt-3'>7.9</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <section class="favorite__albums container mt-4">
+                <h2>Songs which hit my nerves</h2>
+                <div class="row">
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="card">
+                            <iframe src="https://www.youtube.com/embed/M6-A6sAaWUg" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                            <div class="card-body">
+                                <h4>Backstreet Boys</h4>
+                                <p class="card-text">90s - was the time of the pop bands</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="card">
+                            <iframe src="https://www.youtube.com/embed/eW2qlKa6oHw" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                            <div class="card-body">
+                                <h4>Lanny Krevitz</h4>
+
+                                <p class="card-text">2000 - High School times - embarassing times</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="card">
+                            <iframe src="https://www.youtube.com/embed/RB-RcX5DS5A" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                            <div class="card-body">
+                                <h4>Coldplay</h4>
+                                <p class="card-text">2010 - I was getting mature, going to university and living alone
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="card">
+                            <iframe src="https://www.youtube.com/embed/fHI8X4OXluQ" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                            <div class="card-body">
+                                <h4>The Weeknd</h4>
+                                <p class="card-text">2020 - I could listen In Your Eyes and Blinding Lights over and
+                                    over
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </section>
+
+            <section class=' contact container bg-dark d-flex'>
+                <div class="col-12 col-md-6">
+                    <h1>Contact Me</h1>
+                    <p>18041 Biscayne Blvd,<br>
+                        Aventura FL 33160<br>
+                        rita.petillo@gmail.com
+                    </p>
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Email address</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1"
+                                placeholder="name@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Example textarea</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-12 col-md-6">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3587.7677091288588!2d-80.14796268474132!3d25.94285098355487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9ac54e1b04ba7%3A0xe20894a40546bd43!2s18041%20Biscayne%20Blvd%2C%20Aventura%2C%20FL%2033160!5e0!3m2!1sen!2sus!4v1603377443814!5m2!1sen!2sus"
+                        width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""
+                        aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </section>
+        </section>
+
+    </main>
+    <footer>
+        <div> <iframe src="https://open.spotify.com/embed/track/0VjIjW4GlUZAMYd2vXMi3b" id="music-player" height="80"
+                frameborder="0" allowtransparency="true" allow="encrypted-media" autoplay="1"
+                style="position:fixed; bottom:0;width:100vw"></iframe></div>
+    </footer>
+
+
+
+    <!-- Modal Blink -->
+    <div class="modal fade" id="blinkModal" tabindex="-1" role="dialog" aria-labelledby="linkModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="blinkModalLabel">Enema of the State - Tracks</h5>
+                    <button type="button" id="add-blink" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Song</th>
+                                <th scope="col">Duration</th>
+                                <th scope="col"></th>
+                            </tr>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col"><input type="text" class="form-control track-name"
+                                        placeholder="New Track" aria-label="" aria-describedby="basic-addon1">
+                </div>
+                </th>
+                <th scope="col"><input type="text" class="form-control track-dur" placeholder="Duration" aria-label=""
+                        aria-describedby="basic-addon1">
+            </div>
+            </th>
+            <th scope="col"><button type="button" class="btn btn-primary" id="add-blink-btn">Add Track</button></th>
+            </tr>
+            </thead>
+            <tbody id="blink-table">
+
+            </tbody>
+            </table>
+        </div>
+        <div class="modal-footer d-flex align-items-center">
+
+
+
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+    </div>
+    </div>
+    <!-- Modal Lenny -->
+    <div class="modal fade" id="lennyModal" tabindex="-1" role="dialog" aria-labelledby="lennyModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="lennyModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Add Track</span>
+                        </div>
+                        <input id="track-name" type="text" class="form-control" placeholder="Username"
+                            aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Add Track</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Cold -->
+    <div class="modal fade" id="coldModal" tabindex="-1" role="dialog" aria-labelledby="coldModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="coldModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Lenny -->
+    <div class="modal fade" id="wkdModal" tabindex="-1" role="dialog" aria-labelledby="wkdModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="wkdModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script src="https://kit.fontawesome.com/84a612360c.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

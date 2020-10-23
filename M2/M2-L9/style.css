@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+nav.navbar {
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    191deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 100%,
+    rgba(252, 176, 69, 1) 100%
+  );
+}
+.main {
+  padding-top: 40px;
+}
+.presentation h1 {
+  color: rgba(131, 58, 180, 1);
+  font-size: 80px;
+}
+
+.h2,
+h2 {
+  color: rgb(185, 29, 55);
+  margin: 20px auto;
+  font-size: 40px;
+  font-family: "Lobster", cursive;
+}
+.card {
+  min-height: 350px;
+  margin: 20px auto;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+  text-align: left;
+  padding-bottom: 10px;
+  border: none;
+  transform: translateY(0px);
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(10px);
+}
+
+.card-body {
+  position: relative;
+}
+.card-body small {
+  min-height: 100px;
+}
+
+h6 {
+  min-height: 40px;
+}
+.btn.tracks {
+  width: 20%;
+  font-size: 12px;
+  padding: 0;
+  background-color: transparent;
+  color: rgba(131, 58, 180, 1);
+  border: 1px solid rgba(131, 58, 180, 1);
+  position: absolute;
+  bottom: 0;
+  left: 1vw;
+}
+.favorite__albums {
+  text-align: center;
+}
+.best__album h2,
+.best__album h3 {
+  text-align: center;
+  color: rgba(131, 58, 180, 1);
+  margin: 0;
+}
+
+.best__album h2 {
+  color: white;
+  font-size: 50px;
+}
+
+.best__album {
+  background-color: rgb(37, 37, 37);
+  padding: 10px;
+}
+
+.best__album span {
+  text-align: center;
+  color: white;
+  margin: 0;
+  border: 1px solid white;
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 50px;
+}
+.contact {
+  color: white;
+  padding: 20px;
+}
+.contact div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.contact iframe {
+  width: 99%;
+}
