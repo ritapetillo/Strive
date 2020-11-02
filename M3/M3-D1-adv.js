@@ -178,7 +178,6 @@ const arrayChunks = (array, chunck) => {
   }
   return chunked_arr;
 }
-console.log(arrayChunks([2,3,5,2,4,7],2))
 /* 9) PYRAMID
 
 Write a function that accepts a positive number N.
@@ -198,14 +197,23 @@ pyramid has spaces on both the left and right hand sides
         ' ### '
         '#####' */
 
-   const Tree = (h) => {
-  for (i = 0; i <= h; i++) {
+//    const Tree = (h) => {
+//   for (i = 0; i <= h; i++) {
+//     console.log(
+//       " ".repeat(h - i) + "#".repeat(2 * i + 1) + " ".repeat(h - 1) + "\n"
+//     );
+//   }
+// };
+// Tree(3);
+
+  const Tree2 = (h) => {
+  for (i = 1; i <= h; i += 2) {
     console.log(
-      " ".repeat(h - i) + "#".repeat(2 * i + 1) + " ".repeat(h - 1) + "\n"
+      " ".repeat((h - i)/2) + "#".repeat(i) + " ".repeat((h - i)/2) + "\n"
     );
   }
-};
-Tree(3);
+  };
+
 /* 10) SPYRAL MATRIX
 
 Write a function that accepts an integer N
@@ -228,44 +236,19 @@ and returns a NxN spiral matrix.
 
 */
 
-function matrix(n) {
-  const results = [];
-
-  for (let i = 0; i < n; i++) {
-    results.push([]);
-  }
-
-  let counter = 1;
-
-  let startColumn = 0;
-  let endColumn = n - 1;
-  let startRow = 0;
-  let endRow = n - 1;
-
-  while (startColumn <= endColumn && startRow <= endRow) {
-    for (let i = startColumn; i <= endColumn; i++) {
-      results[startRow][i] = counter;
-      counter++;
+const matrix = (n) => {
+    let arrayMatrix = [];
+    for (let i = 0; i < n; i++){
+        arrayMatrix.push([])
     }
-    startRow++;
-
-    for (let i = startRow; i <= endRow; i++) {
-      results[i][endColumn] = counter;
-      counter++;
+    arrayMatrix.forEach(array => {
+         for (let i = 0; i < n; i++){
+        array.push(i)
     }
-    endColumn--;
+    })
 
-    for (let i = endColumn; i >= startColumn; i--) {
-      results[endRow][i] = counter;
-      counter++;
-    }
-    endRow--;
+    return arrayMatrix;
 
-    for (let i = endRow; i >= startRow; i--) {
-      results[i][startColumn] = counter;
-      counter++;
-    }
-    startColumn++;
-  }
-  return results;
 }
+console.log(matrix(4))
+
