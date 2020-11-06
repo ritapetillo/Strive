@@ -3,15 +3,19 @@ let books = []
 let shoppingLisy = []
 let cart = []
 let cartContainer = document.getElementById('cart-container');
-let emptyBtn = document.getElementById('empty-cart')
+let emptyBtn = document.getElementById('empty-cart');
+let nItemsCart = document.getElementById('items-in-cart')
+
 
 
 const startSearch = () => {
     let searchBtn = document.querySelector('.fa-search');
     let searchValue = document.querySelector('.input-search')
-    searchBtn.addEventListener('click', () => {
-        window.location = `search.html?=${searchValue.value}`
-    })
+    if (searchValue){
+        searchBtn.addEventListener('click', () => {
+            window.location = `search.html?=${searchValue.value}`
+            console.log(searchValue.length)
+    })}
 }
 
 const fetchBooks = () => {
@@ -66,6 +70,35 @@ const rederUnderTen = (books) => {
     
 }
 
+const rederResearch = (books,q) => {
+    let containerResearch = document.getElementById('research-container')
+    let querySpace = document.getElementById('search-query')
+    let numResults = document.getElementById('result-number')
+
+    querySpace.innerHTML = q;
+    numResults.innerHTML = books.length
+
+    books.forEach(book => {
+        let div = document.createElement('div')
+        let classes = ["col-4",'col-md-3', "col-lg-2"]
+        div.classList.add(...classes);
+        div.innerHTML =`<div class="card">
+        <div class="cardImg">
+                    <img class="card-img-top" src="${book.img}" alt="Card image cap"></div>
+                    <div class="card-body">
+                        <h6 class="card-title ellipsis">${book.title}</h6>
+                        <div class="card-details d-flex justify-content-between align-items-start">
+                        <h5 class="">$${book.price}</h5>
+                        <i class="fas fa-cart-plus" asin="${book.asin}"></i></div>
+                    </div>`
+            containerResearch.append(div)
+
+    }
+    )
+    
+    
+}
+
 const renderCart = (cart) => {
     let itemsInCartHeading = document.querySelector('.items-cart')
     itemsInCartHeading.innerHTML = `Items in your cart: ${cart.length}`
@@ -93,9 +126,11 @@ const addToCart = () => {
             cart.push(asin)
             localStorage.setItem('savedCart', JSON.stringify(cart))
             console.log(JSON.parse(localStorage.getItem('savedCart')))
+                // renderNavItemsCart(JSON.parse(localStorage.getItem('savedCart')).length)
+
         })
            
-        })
+    })
 }
 
 const deleteFromCart = () => {
@@ -120,7 +155,19 @@ const deleteFromCart = () => {
 const cleanCart = () => {
     cartContainer.querySelectorAll('*').forEach(n => n.remove);
 }
+
+const renderNavItemsCart = () => {
+    // nItemsCart.innerHTML = JSON.parse(localStorage.getItem('savedCart')).length
+}
+
+
+
+
+
+
 window.onload = () => {
+         renderNavItemsCart(cart)
+
     startSearch()
     if (window.location.href.includes('index')) {
         fetchBooks().then(data => {
@@ -150,9 +197,11 @@ window.onload = () => {
     }
     if (window.location.href.includes('search')) {
         fetchBooks().then(data => {
-            let query = window.location.href.substring(1)
-            console.log(query)
-            books = data;
+            let query = window.location.search.substring(2)
+                        books = data;
+            let searchResult = data.filter(book => book.title.includes(query))
+            rederResearch(searchResult, query)
+            addToCart()
 
     
         })
