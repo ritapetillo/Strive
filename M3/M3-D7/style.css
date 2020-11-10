@@ -1,0 +1,24 @@
+
+a:link, a:visited{
+    color:black;
+}
+
+a:hover{
+    color:#615e5e;
+}
+
+.user-container{
+    width: 80%;
+    margin: 10px auto;
+    background-color: #615e5e;
+    color:white;
+    border-radius: 10px;
+}
+
+.user__details{
+    padding: 10px;
+}
+
+.user__details div{
+    padding: 3px;
+}
