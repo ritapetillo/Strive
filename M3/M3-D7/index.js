@@ -84,16 +84,16 @@ const sortUsers = (users) => {
     sortIcon.addEventListener('click', () => {
         let sortedUsers = []
         switch (sort) {
-            case false:
+        case false:
           sortedUsers = users.sort((user1, user2) => user1.name.localeCompare(user2.name))
           sort = "cres"
           break
-            case 'cres':
+        case 'cres':
            sortedUsers = users.sort((user1, user2) => user2.name.localeCompare(user1.name))
                 sort = 'decr'
                 break
-            case 'decr':
-                sortedUsers = users.sort((user1, user2) => user1.id > user2.id)
+        case 'decr':
+                sortedUsers = users.sort((user1, user2) => user1.id - user2.id)
                 sort = false
                 break
 
@@ -114,7 +114,7 @@ const getGeos = (users,mymap) => {
     console.log(geoLocation)
     geoLocation.forEach((geo,i) => {
 
-        L.marker([geo.lat, geo.lng]).addTo(mymap)
+        L.marker([geo.lat, geo.lng]).bindPopup(`${users[i].name}`).openPopup().addTo(mymap)
     })
    
 }
