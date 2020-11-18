@@ -14,33 +14,24 @@ import horror from "./data/horror.json";
 import scifi from "./data/scifi.json";
 import romance from "./data/romance.json";
 
+let books = {
+  fantasy,
+  history,
+  scifi,
+  horror,
+  romance
+}
+
 class App extends React.Component {
   state = {
-    bookList: fantasy,
+    bookList: books.fantasy,
     title: 'Fantasy',
     reduced:false
   };
 
 
   changeCategory = (cat) => {
-    switch (cat) {
-      case "fantasy":
-        this.setState({ bookList: fantasy, title: "Fantasy" });
-        break;
-      case "horror":
-        this.setState({ bookList: horror, title: "Horror" });
-        break;
-      case "romance":
-        this.setState({ bookList: romance, title: "Romance" });
-        break;
-      case "scifi":
-        this.setState({ bookList: scifi, title: "Scifi" });
-        break;
-      case "history":
-        this.setState({ bookList: history, title: "History" });
-        break;
-    }
-     
+    this.setState({bookList:books[cat], title:cat})
   };
   searchBook = (e) => {
   
