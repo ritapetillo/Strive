@@ -19,51 +19,97 @@ let books = {
   history,
   scifi,
   horror,
-  romance
-}
+  romance,
+};
 
 class App extends React.Component {
   state = {
-    bookList: books.fantasy,
-    title: 'Fantasy',
-    reduced:false
+    bookList: books.fantasy.slice(0, 18),
+    title: "fantasy",
+    reduced: false,
+    index: 18,
   };
-
 
   changeCategory = (cat) => {
-    this.setState({bookList:books[cat], title:cat})
+    this.setState({ bookList: books[cat].slice(0, 18), title: cat,index:18 });
   };
   searchBook = (e) => {
-  
-    let allBooks = [...fantasy, ...horror, ...history, ...romance, ...scifi]
-    let research = e.target.value
+        let research = e.target.value;
+
+    let allBooks = [...fantasy, ...horror, ...history, ...romance, ...scifi];
+    let filteredBooks = allBooks.filter((book) =>
+      book.title.toLocaleLowerCase().includes(research.toLocaleLowerCase())
+    );
     this.setState({
-      bookList: allBooks.filter(book => book.title.toLocaleLowerCase().includes(research.toLocaleLowerCase())),
-      title: research == "" ? "Results - All Books" : `Results for ${research}`
-    })
-  
+      bookList: filteredBooks,
+      title:
+        research === "" ? "Results - All Books" : `Results for ${research}`,
+    });
+  };
+
+  filterBooks = (e,cat) => {
+    let research= e.target.value;
+    let booksToFilter = books[cat]
+    let filteredBooks = booksToFilter.filter(book => book.title.toLocaleLowerCase().includes(research.toLocaleLowerCase()))
+   this.setState({bookList:filteredBooks})
 
   }
+  navigate = (cat, dir, increment) => {
+    switch (dir) {
+      case "back":
+        if (this.state.index - increment >= 18) {
+          console.log(this.state.index)
+          this.setState({
+            bookList: books[cat].slice(
+              this.state.index - 2* increment,
+              this.state.index - increment
+            ),
+            index: this.state.index - increment,
+          });
+        }
+
+        break;
+      case "next":
+        if (this.state.index + increment <= books[cat].length) {
+          
+          this.setState({
+            bookList: books[cat].slice(
+              this.state.index,
+              this.state.index + increment
+            ),
+            index: this.state.index + increment,
+          });
+        }
+        break;
+    }
+  };
 
   reduce = (cat) => {
     if (this.state.reduced) {
       this.changeCategory(cat.toLocaleLowerCase());
-      this.setState({ reduced: false })
-      console.log(this.state)
+      this.setState({ reduced: false });
+      console.log(this.state);
     } else {
       this.setState({
-        bookList: this.state.bookList.slice(0, 12),
-        reduced: true
+        bookList: this.state.bookList.slice(0, 18),
+        reduced: true,
       });
     }
-  }
+  };
 
   render() {
     return (
       <div className="App">
         <NavBar changeCategory={this.changeCategory} search={this.searchBook} />
         <Hero />
-        <BookList bookList={this.state.bookList} title={this.state.title} reduce={this.reduce}/>
+        <BookList
+          bookList={this.state.bookList}
+          title={this.state.title}
+          reduce={this.reduce}
+          navigate={this.navigate}
+          indexBook={this.state.index}
+          filterBooks={this.filterBooks}
+        />
 
         <Footer />
       </div>
