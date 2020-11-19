@@ -13,6 +13,9 @@ import history from "./data/history.json";
 import horror from "./data/horror.json";
 import scifi from "./data/scifi.json";
 import romance from "./data/romance.json";
+import SinlgeBookPage from "./components/SinlgeBookPage";
+import { Link, Route, Switch } from "react-router-dom";
+
 
 let books = {
   fantasy,
@@ -101,16 +104,22 @@ class App extends React.Component {
     return (
       <div className="App">
         <NavBar changeCategory={this.changeCategory} search={this.searchBook} />
-        <Hero />
-        <BookList
-          bookList={this.state.bookList}
-          title={this.state.title}
-          reduce={this.reduce}
-          navigate={this.navigate}
-          indexBook={this.state.index}
-          filterBooks={this.filterBooks}
-        />
-
+        <Switch>
+          <Route exact path="/">
+            <Hero />
+            <BookList
+              bookList={this.state.bookList}
+              title={this.state.title}
+              reduce={this.reduce}
+              navigate={this.navigate}
+              indexBook={this.state.index}
+              filterBooks={this.filterBooks}
+            />
+          </Route>
+          <Route exact path="/single-book/:id">
+            <SinlgeBookPage />
+          </Route>
+        </Switch>
         <Footer />
       </div>
     );

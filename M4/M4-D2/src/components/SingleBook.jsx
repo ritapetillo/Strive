@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Card, Col, Badge} from "react-bootstrap";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import MyBedge from './MyBadge'
+import { Link } from "react-router-dom";
+
 
 
 export class SingleBook extends Component {
@@ -30,22 +32,24 @@ export class SingleBook extends Component {
               this.selectBook();
             }}
           >
-            <Card key={book.asin}>
-              <div className="bookList__image-container">
-                <Card.Img variant="top" src={book.img} />
-              </div>
-              <Card.Body>
-                <Card.Title className="text-left">
-                  {book.title}<br />
-                  <MyBedge category={book.category}  />
-                 
-                </Card.Title>
-                <div className="bookList__price">
-                  <h5>$ {book.price}</h5>
-                  <AddShoppingCartIcon />
+            <Link to={"/single-book/" + book.asin} query={{ id: book.asin }}>
+              <Card key={book.asin}>
+                <div className="bookList__image-container">
+                  <Card.Img variant="top" src={book.img} />
                 </div>
-              </Card.Body>
-            </Card>
+                <Card.Body>
+                  <Card.Title className="text-left">
+                    {book.title}
+                    <br />
+                    <MyBedge category={book.category} />
+                  </Card.Title>
+                  <div className="bookList__price">
+                    <h5>$ {book.price}</h5>
+                    <AddShoppingCartIcon />
+                  </div>
+                </Card.Body>
+              </Card>
+            </Link>
           </Col>
         );
     }

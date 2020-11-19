@@ -8,6 +8,7 @@
   border: 0;
   position: relative;
   cursor: pointer;
+  padding-top:10px;
 }
 .bookList__image-container {
   height: 250px;
@@ -56,6 +57,17 @@
   cursor: pointer;
 }
 .selected {
- -webkit-box-shadow: -3px -1px 6px -1px #000000; 
-box-shadow: -3px -1px 6px -1px #000000;
+ /* -webkit-box-shadow: -3px -1px 6px -1px #000000; 
+box-shadow: -3px -1px 6px -1px #000000; */
+border: 1px solid #008575;
+position: relative;
+}
+.selected::after{
+content:"";
+position:absolute;
+height:100%;
+width:100%;
+background-color:#0085760e ;
+top:0;
+left:0
 }
