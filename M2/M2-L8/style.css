@@ -1,0 +1,60 @@
+.table {
+  width: 90%;
+  border: 1px solid black;
+  border-radius: 40px;
+  margin: 40px auto;
+  min-height: 400px;
+    color:white;
+    overflow: hidden;
+}
+
+.green{
+    background-color: green;
+    border-right: 1px solid black;
+     border-radius: 40px 0 0 40px;
+   
+     width:50%
+    
+}
+.blue-yellow{
+    flex:1;
+    
+    
+}
+.yellow{
+    background-color: yellow;
+    height: 100%;
+    flex:0.6;
+    border-radius:0 40px 40px 0px;
+   display:flex;
+   
+
+}
+.blue{
+    height: 100%;
+    flex:0.4;
+    display:flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom:20px;
+}
+
+.yellow div{
+    height: 33.333%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:black
+}
+
+.yellow div:first-child{
+    background-color: rgb(208, 224, 113)
+}
+.yellow div:last-child{
+    background-color: rgba(224, 194, 21, 0.808)
+}
+
+.follow{
+    border-radius: 10px;
+    margin: 10px auto;
+}

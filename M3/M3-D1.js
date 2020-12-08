@@ -264,7 +264,6 @@ const returnString = (n) => {
     return str
 }
 
-console.log(returnString(31))
 /*
 
 If the number has 3 as a factor, output 'Diego'.
@@ -290,3 +289,56 @@ const acronymFunc = (str) => {
     })
     return acronym
 }
+
+function sockMerchant(n, ar) {
+    let numberOfPairs = 0;
+    let uniqueArr = ar.filter((item, i) => ar.indexOf(item) === i)
+    uniqueArr.forEach(number => {
+        let newArray = ar.filter(item => item == number);
+        let n_socksTypeX = newArray.length
+        if (n_socksTypeX > 1) {
+           numberOfPairs += Math.floor(n_socksTypeX/2)
+        }
+
+    })
+console.log(numberOfPairs)
+}
+
+
+const hills = (array) => {
+    let count = 0;
+    let arrayPosition = []
+    for (let i = 0; i < array.length; i++){
+        if (array[i] === 'D') {
+            if (count == 0) {
+                arrayPosition.push('S')
+            }
+            count++
+            
+            
+        } else {
+            count--
+            if (count === 0) {
+                arrayPosition.push('S')
+            }
+        }
+        
+    }
+    return (arrayPosition.length)/2
+    
+}
+
+
+const repeatString = (s, n) => {
+    
+    let repetitions = Math.floor(n/s.length);
+    let lastStringChar = s.length % n
+    let stringArray = s.split('');
+    let howManyA = stringArray.filter(letter => letter === 'a').length;
+    let remainingString = s.substring(0, lastStringChar-1);
+    let remainingA = remainingString.split('').filter(letter => letter === 'a').length;
+    return howManyA * repetitions + remainingA
+ 
+    
+}
+console.log(repeatString('a',10000000000))
