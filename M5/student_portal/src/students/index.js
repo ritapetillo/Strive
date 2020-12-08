@@ -20,7 +20,8 @@ router.get("/", (req, res) => {
 //2. GET single student
 // http://localhost:3001/students/:id
 router.get("/:id", (req, res) => {
-  res.status(200).send(req.params.id);
+  const student = studentsArray.find(student=>student.id === req.params.id)
+  res.status(200).send(student);
 });
 
 //3. POST create a student
@@ -70,7 +71,7 @@ router.put("/:id", (req, res) => {
     studentsArray[0] = modifiedStudent;
     fs.writeFileSync(file, JSON.stringify(studentsArray));
     console.log(studentsArray);
-    res.status(200).send(`Student ${modifiedStudent.id} edited correctly`);
+    res.status(200).send(studentsArray);
   } else {
       //if there is no student associted to that id, then I throw an error of no user found
     res.status(400).send({ error: "No student found" });
