@@ -32,7 +32,7 @@ function StudentTable({ students,handleDelete }) {
                   <EditIcon />
                 </Link>
               </td>
-              <td>
+              <td style={{cursor:'pointer'}}>
                       <DeleteForeverIcon onClick={ ()=>handleDelete(student.id)}/>
               </td>
             </tr>

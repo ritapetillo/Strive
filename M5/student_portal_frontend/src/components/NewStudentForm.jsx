@@ -38,7 +38,7 @@ function NewStudentForm({ history, match }) {
       res = await editStudent(match.params.id, newStudent);
     }
     console.log(res);
-    if (res.length >= 0) {
+    if (res !== undefined) {
       setNewStudent({
         name: "",
         surname: "",
@@ -47,7 +47,6 @@ function NewStudentForm({ history, match }) {
       });
       history.push("/");
     } else {
-      alert("There was an error posting the student");
     }
   };
   return (
@@ -98,6 +97,14 @@ function NewStudentForm({ history, match }) {
               onChange={handleChange}
             />
           </Form.Row>
+          <Button
+            variant="danger"
+            type="submit"
+            className="mt-3 mr-3"
+            onClick={() => history.push("/")}
+          >
+            Dismiss
+          </Button>
 
           <Button variant="primary" type="submit" className="mt-3">
             Submit
