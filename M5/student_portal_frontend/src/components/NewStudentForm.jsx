@@ -45,8 +45,13 @@ function NewStudentForm({ history, match }) {
         email: "",
         dob: "",
       });
-      history.push("/");
+        if (res.error === undefined) {
+              history.push("/");
+        } else {
+            alert(res.error)
+        }
     } else {
+        alert(res)
     }
   };
   return (

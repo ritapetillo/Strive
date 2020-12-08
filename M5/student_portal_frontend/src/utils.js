@@ -46,7 +46,8 @@ export const postStudent = async (student) => {
 
       return data;
     } else {
-      console.log('there was an error posting a new student');
+        console.log('there was an error posting a new student');
+        return res.json()
     }
   } catch {
       console.log("there was an error posting a new student from catch side");
