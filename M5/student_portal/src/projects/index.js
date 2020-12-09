@@ -36,7 +36,7 @@ router.get("/:id", (req, res, next) => {
   try {
     const project = allProjects.find((project) => project.id === req.params.id);
     if (project) {
-      res.send(allProjects);
+      res.send(project);
     } else {
       //insert error handling
       const err = new Error();
