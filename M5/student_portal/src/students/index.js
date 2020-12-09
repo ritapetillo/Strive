@@ -6,7 +6,9 @@ const uniqid = require("uniqid");
 const { WSAEHOSTDOWN } = require("constants");
 const file = path.join(__dirname, "students.json");
 const studentsString = fs.readFileSync(file).toString();
+const { readFile, writeFile } = require("../utils");
 const studentsArray = JSON.parse(studentsString);
+const allProjectsArray = readFile("projects", "projects.json");
 
 //utils
 const checkEmail = (email) => {
@@ -71,7 +73,7 @@ router.put("/:id", (req, res) => {
   );
   //If there is a student with this ID, then I'm going to replace the previous student with the new modified one at that index
   if (studentFound >= 0) {
-    studentsArray[0] = modifiedStudent;
+    studentsArray[studentFound] = modifiedStudent;
     fs.writeFileSync(file, JSON.stringify(studentsArray));
     console.log(studentsArray);
     res.status(200).send(studentsArray);
@@ -90,6 +92,19 @@ router.delete("/:id", (req, res) => {
   fs.writeFileSync(file, JSON.stringify(newArrayStudents));
 
   res.status(200).send(newArrayStudents);
+});
+
+// 6.GET /students/:studentsID/projects/ => get all the projects for a student with a given ID
+router.get("/:studentID/projects", (req, res, next) => {
+  try {
+    const studentProject = allProjectsArray.filter(
+      (project) => project.studentID === req.params.studentID
+    );
+
+    res.send(studentProject);
+  } catch (err) {
+    next(err);
+  }
 });
 
 module.exports = router;
