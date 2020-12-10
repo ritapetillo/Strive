@@ -6,10 +6,13 @@ const uniqid = require("uniqid");
 const { WSAEHOSTDOWN } = require("constants");
 const file = path.join(__dirname, "students.json");
 const studentsString = fs.readFileSync(file).toString();
-const { readFile, writeFile } = require("../utils");
+const { readFile, writeFile,writeImages } = require("../utils");
 const studentsArray = JSON.parse(studentsString);
 const allProjectsArray = readFile("projects", "projects.json");
+const multer = require("multer");
+const upload = multer({});
 
+const studentsImgStaticFolder = path.join(__dirname, "../public/img/students");
 //utils
 const checkEmail = (email) => {
   return studentsArray.find((student) => student.email === email);
@@ -106,5 +109,24 @@ router.get("/:studentID/projects", (req, res, next) => {
     next(err);
   }
 });
+
+// 7.POST /students/:studentsID/uploadPhoto/ => upload student Picture
+router.post(
+  "/:studentID/uploadPhoto",
+  upload.single("avatar"),
+  async (req, res, next) => {
+    try {
+      fs.writeFileSync(
+        path.join(studentsImgStaticFolder, `${req.params.studentID}.jpeg`),
+        req.file.buffer
+      );
+      console.log(req.file)
+      res.send("image correctly saved");
+    } catch (err) {
+      console.log(err);
+      next(err);
+    }
+  }
+);
 
 module.exports = router;
