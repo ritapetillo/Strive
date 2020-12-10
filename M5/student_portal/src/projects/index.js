@@ -6,8 +6,11 @@ const router = express.Router();
 const { check, validationResult } = require("express-validator");
 const { readFile, writeFile } = require("../utils");
 const uniqid = require("uniqid");
+const multer = require('multer');
+const upload = multer()
 
 const allProjects = readFile("projects", "projects.json");
+const projectsImgStaticFolder = path.join(__dirname, "../public/img/projects");
 
 // GET /projects => returns the list of projects
 router.get("/", (req, res, next) => {
@@ -28,6 +31,7 @@ router.get("/", (req, res, next) => {
   } catch (err) {
     //insert error handling
     console.log(err);
+    next(err)
   }
 });
 
@@ -158,5 +162,25 @@ router.delete("/:id", (req, res, next) => {
     next(err);
   }
 });
+
+// POST /projects/:projectsID/uploadPhoto/ => upload student Picture
+
+router.post(
+  "/:projectID/uploadPhoto",
+  upload.single("projectImg"),
+  async (req, res, next) => {
+    try {
+      fs.writeFileSync(
+        path.join(projectsImgStaticFolder, `${req.params.projectID}.jpeg`),
+        req.file.buffer
+      );
+      console.log(req.file);
+      res.send("image correctly saved");
+    } catch (err) {
+      console.log(err);
+      next(err);
+    }
+  }
+);
 
 module.exports = router;

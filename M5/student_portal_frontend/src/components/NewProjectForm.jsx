@@ -50,7 +50,7 @@ function NewProjectForm({ history, match }) {
         studentID: "",
       });
       if (res.error === undefined) {
-        history.push("/");
+        history.goBack();
       } else {
         alert(res.error);
       }
