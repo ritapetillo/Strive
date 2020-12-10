@@ -38,12 +38,12 @@ function ProjectsTable({ projects,handleDeleteProject }) {
                 <td>{moment(project.createdAt).format("MM/DD/YYYY hh:mm")}</td>
                 <td>{moment(project.updatedAt).format("MM/DD/YYYY hh:mm")}</td>
                 <td>
-                  <Link to={`project/${project.id}`}>
+                  <Link to={`../project/${project.id}`}>
                     <VisibilityIcon />
                   </Link>
                 </td>
                 <td>
-                  <Link to={`project-form/${project.id}/${project.studentID}`}>
+                  <Link to={`../project-form/${project.id}/${project.studentID}`}>
                     <EditIcon />
                   </Link>
                 </td>

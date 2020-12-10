@@ -18,9 +18,21 @@ router.get("/:projectID/reviews", async (req, res, next) => {
     next(err);
   }
 });
+//GET /projects/projectID/reviews/:reviewID => get reviewByID
+router.get("/reviews/:reviewID", async (req, res, next) => {
+  try {
+    let arrayReviews = await readFileAsync(reviewFile);
+    let reviewsByID = arrayReviews.find(
+      (review) => review.id === req.params.reviewID
+    );
+    res.send(reviewsByID);
+  } catch (err) {
+    next(err);
+  }
+});
 // POST /projects/projectID/reviews => add a new review for the given project
 router.post(
-  "/projectID/reviews",
+  "/:projectID/reviews",
   [
     check("name")
       .exists()

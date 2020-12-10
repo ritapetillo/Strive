@@ -212,3 +212,126 @@ export const getProjectByStudentId = async (studentID) => {
     console.log("there was a problem fetching the projects");
   }
 };
+
+//Get one student by id
+
+export const getReviewsByProjectId = async (id) => {
+  try {
+    const res = await fetch("http://localhost:3001/projects/"+id+"/reviews");
+    if (res.ok) {
+      const reviews = await res.json();
+      console.log(reviews);
+      return reviews;
+    } else {
+      console.log(res.error);
+    }
+  } catch {
+    console.log("there was a problem fetching the reviews");
+  }
+};
+
+//Create a new review 
+export const postReview = async (projectID, review) => {
+  console.log(review)
+  try {
+      const res = await fetch("http://localhost:3001/projects/" + projectID +'/reviews', {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body:JSON.stringify(review)
+          
+    });
+    if (res.ok) {
+      const data = await res.json();
+        console.log('review successfully create', data);
+                        alert("review correctly created");
+
+      return data;
+    } else {
+        console.log('there was an error posting a new review');
+        return res.json()
+    }
+  } catch {
+      console.log("there was an error posting a new review from catch side");
+  }
+};
+
+//Modify selected review
+export const editReview = async (projectID,reviewID,review) => {
+  try {
+      const res = await fetch("http://localhost:3001/projects/" + projectID+"/reviews/"+ reviewID, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(review),
+      });
+    if (res.ok) {
+      const data = await res.json();
+        console.log('preview successfully edited', data);
+                alert("review correctly edited");
+
+      return data;
+    } else {
+      console.log('there was an error editing the review');
+    }
+  } catch {
+      console.log("there was an error editing the project from catch side");
+  }
+};
+
+//Delete selected review
+export const deleteReview = async (id) => {
+  try {
+      const res = await fetch("http://localhost:3001/projects/reviews/"+id, {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" }
+          
+    });
+    if (res.ok) {
+      const data = await res.json();
+        console.log('review successfully deleted', data);
+        alert('review correctly deleted')
+      return data;
+    } else {
+      console.log('there was an error deleting the review');
+    }
+  } catch {
+      console.log("there was an error deleting the review from catch side");
+  }
+};
+//Get one student by id
+
+export const getReviewByID = async (id) => {
+  console.log(id)
+  try {
+    const res = await fetch("http://localhost:3001/projects/reviews/"+id);
+    if (res.ok) {
+      const review = await res.json();
+      console.log(review);
+      return review;
+    } else {
+      console.log(res.error);
+    }
+  } catch {
+    console.log("there was a problem fetching the review");
+  }
+};
+
+//POST -> POST upload student image :studentsID/uploadPhoto/
+
+export const uploadStudentImage = async (id,image) => {
+  const formdata = new FormData();
+  formdata.append("avatar", image);
+  try {
+    const res = await fetch("http://localhost:3001/students/" + id + "/uploadPhoto", {
+      method: "POST",
+      body:formdata
+    });
+    if (res.ok) {
+      
+      alert('image correctly uploaded')
+    } else {
+      console.log(res.error);
+    }
+  } catch {
+    console.log("there was a problem uploading the image");
+  }
+};

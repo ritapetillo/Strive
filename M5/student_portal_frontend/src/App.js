@@ -7,6 +7,8 @@ import NewStudentForm from "./components/NewStudentForm";
 import { Container } from "react-bootstrap";
 import StudentProfile from "./components/StudentProfile";
 import NewProjectForm from "./components/NewProjectForm";
+import ProjectDetails from "./components/ProjectDetails";
+import NewReviewForm from "./components/NewReviewForm";
 
 function App() {
   return (
@@ -28,6 +30,16 @@ function App() {
           eaxct
           path="/project-form/:id/:studentID"
           render={(props) => <NewProjectForm {...props} />}
+        />
+        <Route
+          eaxct
+          path="/project/:projectID/"
+          render={(props) => <ProjectDetails {...props} />}
+        />
+        <Route
+          eaxct
+          path="/review-form/:projectID/:reviewID"
+          render={(props) => <NewReviewForm {...props} />}
         />
       </Container>
     </div>
